@@ -5,7 +5,7 @@ import cors from 'cors'
 
 // my file imports
 import { db } from './firebaseConfig.mjs'
-import { decodeToken } from './middleware/index.mjs'
+import { decodeToken } from './middleware.mjs'
 
 const app = express()
 const port = 3000
