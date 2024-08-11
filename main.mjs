@@ -3,6 +3,7 @@ import { Expo } from 'expo-server-sdk'
 import * as schedule from 'node-schedule'
 import cors from 'cors'
 
+// my file imports
 import { db } from './firebaseConfig.mjs'
 import { decodeToken } from './middleware/index.mjs'
 
@@ -10,11 +11,12 @@ const app = express()
 const port = 3000
 const expo = new Expo()
 
-// Middleware
+// middleware
 app.use(express.json())
 app.use(cors())
 app.use(decodeToken)
 
+// helper functions
 
 const getTodayDate = () => {
     let today = new Date();
@@ -98,6 +100,8 @@ const handleSendNotification = async (admin, fridge_id, product_name, product_ty
     }
 }
 
+// API routes
+
 app.post('/scheduleNotification', async (req, res) => {
 
     
@@ -148,6 +152,6 @@ app.post('/cancelNotification', async (req, res) => {
 
 })
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+app.listen(process.env.PORT || port, () => {
+    console.log(`Server running on port ${port}`)
 })
