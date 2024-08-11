@@ -152,6 +152,10 @@ app.post('/cancelNotification', async (req, res) => {
 
 })
 
+app.get('/test', (req, res) => {
+    res.send('API is working')
+})
+
 app.listen(process.env.PORT || port, () => {
     console.log(`Server running on port ${port}`)
 })
