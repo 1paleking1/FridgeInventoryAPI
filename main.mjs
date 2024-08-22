@@ -48,7 +48,7 @@ const getUsername = (email) => {
 
 const getNotificationDate = (days_to_wait) => {
     const date = new Date()
-    date.setSeconds(date.getSeconds() + 10) // temporary test code
+    date.setDate(date.getDate() + days_to_wait)
     return date
 }
 
@@ -130,11 +130,12 @@ app.post('/scheduleNotification', async (req, res) => {
 
 app.post('/cancelNotification', async (req, res) => {
 
+    const { job_name } = req.body
+    
     if (!job_name) {
         return res.status(400).send('Invalid request parameters');
     }
 
-    const { job_name } = req.body
     const job_to_cancel = schedule.scheduledJobs[job_name]
 
     try {
