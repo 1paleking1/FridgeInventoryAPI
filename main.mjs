@@ -147,6 +147,7 @@ app.post('/cancelNotification', async (req, res) => {
         if (job_to_cancel) {
             job_to_cancel.cancel()
             res.status(200).send('Notification cancelled')
+            console.log(`Notification ${job_name} cancelled`)
         } else {
             res.status(404).send('Job (notification) attempted to be cancelled was not found')
         }
