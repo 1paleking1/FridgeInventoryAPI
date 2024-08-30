@@ -115,7 +115,7 @@ app.post('/scheduleNotification', async (req, res) => {
 
     try {
 
-        schedule.scheduleJob(job_name, getNotificationDate(7), async () => {
+        schedule.scheduleJob(job_name, getNotificationDate(1), async () => {
             handleSendNotification(admin, fridge_id, product_name, product_type, job_name)
         })
     
