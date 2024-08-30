@@ -95,6 +95,9 @@ const handleSendNotification = async (admin, fridge_id, product_name, product_ty
                 console.error('Error fetching receipts:', error)
             }
         }
+
+        console.log('Notifications sent successfully')
+
     } catch (error) {
         console.error('Error sending notifications:', error)
     }
@@ -120,6 +123,7 @@ app.post('/scheduleNotification', async (req, res) => {
         })
     
         res.status(200).send('Notification scheduled successfully')
+        console.log(`Notification scheduled for ${product_name} in fridge ${fridge_id}`)
 
     } catch (e) {
         console.error(e)
