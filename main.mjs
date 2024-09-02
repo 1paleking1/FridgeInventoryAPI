@@ -51,11 +51,10 @@ const getNotificationDate = (days_to_wait) => {
     // date.setDate(date.getDate() + days_to_wait)
     // return date
 
-    // test code sends it in 10 seconds
+    // test code sends it in 20 minutes
     const date = new Date()
-    date.setSeconds(date.getSeconds() + 10)
+    date.setMinutes(date.getMinutes() + 20)
     return date
-
 }
 
 const handleSendNotification = async (admin, fridge_id, product_name, product_type, job_name) => {
