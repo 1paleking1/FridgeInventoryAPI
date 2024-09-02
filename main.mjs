@@ -47,9 +47,15 @@ const getUsername = (email) => {
 }
 
 const getNotificationDate = (days_to_wait) => {
+    // const date = new Date()
+    // date.setDate(date.getDate() + days_to_wait)
+    // return date
+
+    // test code sends it in 10 seconds
     const date = new Date()
-    date.setDate(date.getDate() + days_to_wait)
+    date.setSeconds(date.getSeconds() + 10)
     return date
+
 }
 
 const handleSendNotification = async (admin, fridge_id, product_name, product_type, job_name) => {
