@@ -1,4 +1,4 @@
-import { auth } from './firebaseConfig.js';
+import { auth } from './firebaseConfig.mjs';
 
 const decodeToken = async (req, res, next) => {
 
