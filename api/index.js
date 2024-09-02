@@ -4,8 +4,8 @@ import * as schedule from 'node-schedule'
 import cors from 'cors'
 
 // my file imports
-import { db } from '../firebaseConfig.js'
-import { decodeToken } from '../middleware.js'
+import { db } from './firebaseConfig.js'
+import { decodeToken } from './middleware.js'
 
 const app = express()
 const port = 3000
