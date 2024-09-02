@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:20
 
 # Create app directory
 WORKDIR /app
@@ -13,9 +13,6 @@ COPY . .
 # Expose port
 EXPOSE 3000
 
-# Use a non-root user
-RUN useradd -m appuser
-USER appuser
 
 # Run the application
-CMD ["node", "main.js"]
+CMD ["node", "index.js"]
