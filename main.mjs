@@ -166,7 +166,7 @@ app.post('/cancelNotification', async (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-    res.status(200)
+    res.status(200).send('OK')
 })
 
 app.listen(process.env.PORT || port, () => {
