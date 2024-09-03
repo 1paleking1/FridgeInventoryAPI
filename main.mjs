@@ -53,9 +53,9 @@ const getNotificationDate = (days_to_wait) => {
     // date.setDate(date.getDate() + days_to_wait)
     // return date
 
-    // test code sends it in 8 hours
+    // test code sends it in 1 hour
     const date = new Date()
-    date.setHours(date.getHours() + 8)
+    date.setHours(date.getHours() + 1)
     return date
 }
 
