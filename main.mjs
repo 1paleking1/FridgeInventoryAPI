@@ -14,7 +14,9 @@ const expo = new Expo()
 // middleware
 app.use(express.json())
 app.use(cors())
-app.use(decodeToken)
+// app.use(decodeToken)
+app.use('/scheduleNotification', decodeToken)
+app.use('/cancelNotification', decodeToken)
 
 // helper functions
 
@@ -164,7 +166,7 @@ app.post('/cancelNotification', async (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-    res.send('API is working')
+    res.status(200)
 })
 
 app.listen(process.env.PORT || port, () => {
