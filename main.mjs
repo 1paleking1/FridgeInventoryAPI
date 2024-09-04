@@ -49,19 +49,14 @@ const getUsername = (email) => {
 }
 
 const getNotificationDate = (days_to_wait) => {
-    // const date = new Date()
-    // date.setDate(date.getDate() + days_to_wait)
-    // return date
-
-    // test code sends it in 1 hour
     const date = new Date()
-    date.setHours(date.getHours() + 1)
+    date.setDate(date.getDate() + days_to_wait)
     return date
 }
 
 const handleSendNotification = async (admin, fridge_id, product_name, product_type, job_name) => {
 
-    // first save the notification to the database
+    // first save the notification to the database to be viewed from app inbox 
 
     const fridgeRef = db.collection("fridges").doc(fridge_id).collection("notifications").doc(job_name)
     
