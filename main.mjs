@@ -14,12 +14,10 @@ const expo = new Expo()
 // middleware
 app.use(express.json())
 app.use(cors())
-// app.use(decodeToken)
 app.use('/scheduleNotification', decodeToken)
 app.use('/cancelNotification', decodeToken)
 
 // helper functions
-
 const getTodayDate = () => {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
